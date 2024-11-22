@@ -23,8 +23,8 @@ To use the application, ensure the following dependencies are installed:
 
 1. Clone this repository:
    ```bash
-   git clone [this repo](https://github.com/HeReFanMi/NGI_LLM.git)
-   cd your-repository-directory
+   git clone https://github.com/HeReFanMi/NGI_LLM.git
+   cd NGI_LLM
    ```
 
 2. Build the Docker image:
