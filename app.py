@@ -22,7 +22,7 @@ def predict():
         outputs = model.generate(**inputs, max_new_tokens=50)
         response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-        return jsonify({"response": response})
+        return response
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
