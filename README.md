@@ -23,7 +23,7 @@ To use the application, ensure the following dependencies are installed:
 
 1. Clone this repository:
    ```bash
-   git clone this repo
+   git clone [this repo](https://github.com/HeReFanMi/NGI_LLM.git)
    cd your-repository-directory
    ```
 
