@@ -24,7 +24,7 @@ def LLMrequest(resp):
         # Check if the request was successful
         if response.status_code == 200:
 
-            print('successful' 
+            print('successful')
         
         else:
             print("Failed to get a valid response. Status code:", response.status_code)
