@@ -37,10 +37,10 @@ To use the application, ensure the following dependencies are installed:
 Once the image is built, you can run the container using:
 
 ```bash
-docker run -d -p 5000:5000 ngillama3-flask-api
+docker run -d -p 5002:5002 ngillama3-flask-api
 ```
 
-This will start the Flask application on port `5000` inside the container and expose it to your host machine.
+This will start the Flask application on port `5002` inside the container and expose it to your host machine.
 
 ### API Endpoints
 
@@ -71,7 +71,7 @@ The API will respond with a JSON object containing the generated text:
 ### Example cURL Request
 
 ```bash
-curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d '{"text": "Tell me about the advancements in AI."}'
+curl -X POST http://localhost:5002/predict -H "Content-Type: application/json" -d '{"text": "Tell me about the advancements in AI."}'
 ```
 
 ### Model Information
@@ -106,7 +106,7 @@ To run the application locally without Docker, follow these steps:
    flask run
    ```
 
-This will start the application at `http://127.0.0.1:5000`.
+This will start the application at `http://127.0.0.1:5002`.
 
 ### Requirements
 
