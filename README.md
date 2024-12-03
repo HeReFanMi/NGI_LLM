@@ -1,3 +1,4 @@
+
 # NGILlama3 API
 
 This repository provides a RESTful API built using Flask for interacting with a custom language model, `NGILlama3`, based on the `Llama` architecture. The API allows for text generation using a pre-trained language model from Hugging Face, designed for a range of natural language processing tasks.
@@ -71,7 +72,8 @@ The API will respond with a JSON object containing the generated text:
 ### Example cURL Request
 
 ```bash
-curl -X POST http://localhost:5002/predict -H "Content-Type: application/json" -d '{"text": "Tell me about the advancements in AI."}'
+curl -X POST http://127.0.0.1:5002/predict -H "Content-Type: application/json" -d '{"chunks":["A new study has shown that regular exercise can help reduce the risk of chronic diseases such as diabetes and heart disease.","Research also indicates that physical activity improves mental health and overall quality of life."],"question":"What are the health benefits of regular exercise?"}'
+'
 ```
 
 ### Model Information
@@ -86,19 +88,20 @@ To run the application locally without Docker, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone This repo
-   cd your-repository-directory
+   git clone https://github.com/HeReFanMi/NGI_LLM.git
+   cd NGI_LLM
    ```
 
-2. Create a virtual environment:
+2. **Set up the Conda environment:**
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows, use venv\Scripts\activate
+   conda create --name unsloth_env python=3.10 pytorch-cuda=11.8 pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers -y
+   conda activate unsloth_env
    ```
 
-3. Install the required dependencies:
+3. **Install the required Python dependencies:**
    ```bash
-   pip install -r requirements.txt
+   pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+   pip install --no-deps "trl<0.9.0" peft accelerate bitsandbytes
    ```
 
 4. Run the Flask app:
@@ -120,3 +123,4 @@ The application relies on the following Python libraries:
 
 - **Model Loading Issues**: Ensure the model is available on Hugging Face and the internet connection is stable.
 - **Out of Memory Errors**: If you are running the app locally and encounter memory issues, consider using a machine with a more powerful GPU or reduce the model size.
+
